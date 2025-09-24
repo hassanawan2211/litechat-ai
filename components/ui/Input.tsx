@@ -2,16 +2,19 @@
 import { InputHTMLAttributes } from "react";
 import classNames from "classnames";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
-
-export default function Input({ className, ...props }: InputProps) {
+export default function Input({
+  className,
+  ...props
+}: InputHTMLAttributes<HTMLInputElement>) {
   return (
     <input
+      {...props}
       className={classNames(
-        "w-full p-2 rounded-lg bg-gray-900 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none",
+        "flex-1 rounded-lg bg-gray-800 border border-gray-700",
+        "px-3 py-2 text-sm text-gray-100 placeholder-gray-400",
+        "focus:outline-none focus:ring-2 focus:ring-blue-500",
         className
       )}
-      {...props}
     />
   );
 }
